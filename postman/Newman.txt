@@ -1,0 +1,86 @@
+C:\Users\zavis>npm install -g newman
+npm warn deprecated har-validator@5.1.5: this library is no longer supported
+npm warn deprecated uuid@3.4.0: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+npm warn deprecated uuid@8.3.2: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+npm warn deprecated @faker-js/faker@5.5.3: Please update to a newer version.
+
+added 148 packages in 12s
+
+21 packages are looking for funding
+  run `npm fund` for details
+npm notice
+npm notice New minor version of npm available! 11.13.0 -> 11.15.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.15.0
+npm notice To update run: npm install -g npm@11.15.0
+npm notice
+
+C:\Users\zavis>newman run "C:\Users\zavis\Project-Qa\postman\Restful Booker Project Qa.postman_collection.json" -e "C:\Users\zavis\Project-Qa\postman\Serve Rest.postman_environment.json"
+(node:18612) [DEP0176] DeprecationWarning: fs.F_OK is deprecated, use fs.constants.F_OK instead
+(Use `node --trace-deprecation ...` to show where the warning was created)
+newman
+
+Restful Booker Project Qa
+
+→ Create token
+  POST https://restful-booker.herokuapp.com/auth [200 OK, 766B, 599ms]
+  √  Status code is 200
+  √  Body matches string
+  √  Response time is less than 2000ms
+
+→ getbookingall
+  GET https://restful-booker.herokuapp.com/booking [200 OK, 36.69kB, 262ms]
+  √  Status code is 200
+  √  Body matches string
+  √  Response time is less than 2000ms
+
+→ createbooking
+  POST https://restful-booker.herokuapp.com/booking [200 OK, 917B, 130ms]
+  √  Status code is 200
+  √  Body matches string
+  √  Response time is less than 2000ms
+
+→ withdraw booking
+  GET https://restful-booker.herokuapp.com/booking/2793 [200 OK, 888B, 133ms]
+  √  Status code is 200
+  √  Body matches string
+  √  Response time is less than 2000ms
+
+→ Editing bookings
+  PUT https://restful-booker.herokuapp.com/booking/2793 [200 OK, 918B, 132ms]
+  √  Status code is 200
+  √  Body matches string
+  √  Response time is less than 2000ms
+
+→ PartialUpdateBooking
+  PATCH https://restful-booker.herokuapp.com/booking/2793 [200 OK, 920B, 133ms]
+  √  Status code is 200
+  √  Body matches string
+  √  Response time is less than 2000ms
+
+→ DeleteBooking
+  DELETE https://restful-booker.herokuapp.com/booking/2793 [201 Created, 751B, 130ms]
+  √  Status code is 201
+  √  Body matches string
+  √  Response time is less than 2000ms
+
+┌─────────────────────────┬─────────────────────┬────────────────────┐
+│                         │            executed │             failed │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│              iterations │                   1 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│                requests │                   7 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│            test-scripts │                   7 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│      prerequest-scripts │                   0 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│              assertions │                  21 │                  0 │
+├─────────────────────────┴─────────────────────┴────────────────────┤
+│ total run duration: 2s                                             │
+├────────────────────────────────────────────────────────────────────┤
+│ total data received: 36.63kB (approx)                              │
+├────────────────────────────────────────────────────────────────────┤
+│ average response time: 217ms [min: 130ms, max: 599ms, s.d.: 162ms] │
+└────────────────────────────────────────────────────────────────────┘
+
+C:\Users\zavis>
