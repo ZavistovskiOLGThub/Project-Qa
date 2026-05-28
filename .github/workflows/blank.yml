@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Показать текущую директорию и файлы
+        run: |
+          pwd
+          ls -la
+
+      - name: Запуск скрипта из корня
+        run: sh ./PrivetMur.sh
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Запустить скрипт из папки tests
+        working-directory: ./forjob   # если скрипт лежит в папке tests
+        run: sh ./PrivetMur.sh
+
