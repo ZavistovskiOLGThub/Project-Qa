@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo -n "Введите напоминание для сохранения:"
 read -r remainder_text
 
