@@ -16,10 +16,6 @@ jobs:
         run: |
           pwd
           ls -la
-
-      - name: Запуск скрипта из корня
-        run: sh ./PrivetMur.sh
-
   test:
     needs: build
     runs-on: ubuntu-latest
